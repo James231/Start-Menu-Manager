@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.0;net4.5.2</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Icons\Copy.ico" />
+    <None Remove="Resources\Icons\Copy_16x.svg" />
+    <None Remove="Resources\Icons\Cut.ico" />
+    <None Remove="Resources\Icons\Cut_16x.svg" />
+    <None Remove="Resources\Icons\Delete.ico" />
+    <None Remove="Resources\Icons\Delete_16x.svg" />
+    <None Remove="Resources\Icons\OpenFile.ico" />
+    <None Remove="Resources\Icons\OpenFile_16x.svg" />
+    <None Remove="Resources\Icons\Paste.ico" />
+    <None Remove="Resources\Icons\Paste_16x.svg" />
+    <None Remove="Resources\Icons\Redo.ico" />
+    <None Remove="Resources\Icons\Redo_16x.svg" />
+    <None Remove="Resources\Icons\Undo.ico" />
+    <None Remove="Resources\Icons\Undo_16x.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Icons\Copy_16x.svg" />
+    <Content Include="Resources\Icons\Cut_16x.svg" />
+    <Content Include="Resources\Icons\Delete_16x.svg" />
+    <Content Include="Resources\Icons\OpenFile_16x.svg" />
+    <Content Include="Resources\Icons\Paste_16x.svg" />
+    <Content Include="Resources\Icons\Redo_16x.svg" />
+    <Content Include="Resources\Icons\Undo_16x.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AvalonEdit" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Copy.ico" />
+    <Resource Include="Resources\Icons\Cut.ico" />
+    <Resource Include="Resources\Icons\Delete.ico" />
+    <Resource Include="Resources\Icons\OpenFile.ico" />
+    <Resource Include="Resources\Icons\Paste.ico" />
+    <Resource Include="Resources\Icons\Redo.ico" />
+    <Resource Include="Resources\Icons\Undo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="TextEdit.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>TextEdit.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Themes\DarkBrushs.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Icons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\LightBrushs.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

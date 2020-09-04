@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+          xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+  <Product Id="*" Name="Start Menu Manager" Language="1033" Version="1.0.0.0" Manufacturer="Jam-Es.com" UpgradeCode="05e56518-5f22-4069-bd95-dcdb38b4ee53">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <MajorUpgrade DowngradeErrorMessage="A newer version of Start Menu Manager is already installed." />
+    <MediaTemplate EmbedCab="yes"/>
+
+    <Feature Id="ProductFeature" Title="StartMenuManager.GUI.Installer" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="RunnerComponents" />
+      <ComponentGroupRef Id="BuilderComponents" />
+      <ComponentGroupRef Id="PreUninstallComponents" />
+      <ComponentRef Id="ApplicationShortcut" />
+      <ComponentRef Id="RunnerFolder" />
+      <ComponentRef Id="WebsiteIconsFolder" />
+      <ComponentRef Id="RootInstallFolder" />
+    </Feature>
+
+    <PropertyRef Id="WIX_IS_NETFRAMEWORK_472_OR_LATER_INSTALLED"/>
+    <Condition Message=".NET Framework 4.7.2 or later not found. Install the .NET Framework and try again.">
+      <![CDATA[INSTALLED OR WIX_IS_NETFRAMEWORK_472_OR_LATER_INSTALLED]]>
+    </Condition>
+
+    <InstallExecuteSequence>
+      <!--<Custom Action="InstallService" After="InstallFiles">(NOT Installed) AND (NOT REMOVE)</Custom>-->
+      <Custom Action="UninstallService" After="InstallInitialize">(NOT UPGRADINGPRODUCTCODE) AND (REMOVE="ALL")</Custom>
+    </InstallExecuteSequence>
+    <!--<CustomAction Id="InstallService" Return="check" Impersonate="no" Execute="deferred" Directory="INSTALLFOLDER" ExeCommand="[INSTALLFOLDER]$(var.MyService.TargetFileName) parameters..."/>-->
+    <CustomAction Id="UninstallService" Return="check" Impersonate="no" Execute="deferred" Directory="PreUninstallFolder" ExeCommand="[PreUninstallFolder]$(var.StartMenuManager.PreUninstall.TargetFileName)"/>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="Start Menu Manager"/>
+      </Directory>
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Start Menu Manager">
+          <Directory Id="RunnerFolder" Name="Runner">
+            <Component Id="RunnerFolder" Guid="48712761-7811-44a6-b704-a4e60b13d366">
+              <CreateFolder />
+              <RemoveFile Id="PurgeRunnerFolder" Name="*.*" On="uninstall" />
+            </Component>
+          </Directory>
+          <Directory Id="BuilderFolder" Name="Builder">
+          </Directory>
+          <Directory Id="PreUninstallFolder" Name="PreUninstall">
+          </Directory>
+          <Directory Id="WebsiteIconsFolder" Name="Website Icons">
+            <Component Id="WebsiteIconsFolder" Guid="dd89d982-e8a7-425a-9067-86c09c299edd">
+              <CreateFolder />
+              <RemoveFile Id="PurgeWebsiteIconsFolder" Name="*.*" On="uninstall" />
+            </Component>
+          </Directory>
+          <Component Id="RootInstallFolder" Guid="0b233294-5fca-4c9d-ba69-b73b2acfe813">
+            <CreateFolder />
+            <RemoveFile Id="RootInstallFolder" Name="*.*" On="uninstall" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="be941bbd-7280-4aad-9ede-a48fdf1ba220">
+        <!--Start Menu Shortcut Folder-->
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                    Name="Start Menu Manager"
+                    Description="Opens Windows Start Menu Manager by Jam-Es.com"
+                    Target="[#MainExe]"
+                    WorkingDirectory="APPLICATIONROOTDIRECTORY"/>
+        <RemoveFolder Id="CleanUpShortCut" Directory="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\JamEs.com\StartMenuManager" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+
+  <Fragment>
+    <!-- The Root Install Folder -->
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="ProductComponent">
+        <File Id="MainExe" Source="$(var.StartMenuManager.GUI.TargetPath)" />
+      </Component>
+      <Component Id="MaterialDesignThemes.Wpf.dll" Guid="6bcf8169-12a0-4f0d-9f72-29adcb504767">
+        <File Id="MaterialDesignThemes.Wpf.dll" Source="$(var.StartMenuManager.GUI.TargetDir)MaterialDesignThemes.Wpf.dll" KeyPath="yes" Checksum="yes"/>
+      </Component>
+      <Component Id="MaterialDesignColors.dll" Guid="69911b17-546f-4a3f-9505-9db9d10c0fc0">
+        <File Id="MaterialDesignColors.dll" Source="$(var.StartMenuManager.GUI.TargetDir)MaterialDesignColors.dll" KeyPath="yes" Checksum="yes"/>
+      </Component>
+      <Component Id="Newtonsoft.Json.dll" Guid="c159ebd1-9fe5-4168-8163-75df29285ee8">
+        <File Id="Newtonsoft.Json.dll" Source="$(var.StartMenuManager.GUI.TargetDir)Newtonsoft.Json.dll" KeyPath="yes" Checksum="yes"/>
+      </Component>
+      <Component Id="JsonSubTypes.dll" Guid="5dc78854-ec03-4e9b-ad5b-a45716a73598">
+        <File Id="JsonSubTypes.dll" Source="$(var.StartMenuManager.GUI.TargetDir)JsonSubTypes.dll" KeyPath="yes" Checksum="yes"/>
+      </Component>
+      <Component Id="ICSharpCode.AvalonEdit.dll" Guid="74114a97-9cff-4d29-886a-181935b5857f">
+        <File Id="ICSharpCode.AvalonEdit.dll" Source="$(var.StartMenuManager.GUI.TargetDir)ICSharpCode.AvalonEdit.dll" />
+      </Component>
+      <Component Id="StartMenuManager.Core.dll" Guid="b69ce1fa-584d-469d-a942-bd0ee08e6415">
+        <File Id="StartMenuManager.Core.dll" Source="$(var.StartMenuManager.GUI.TargetDir)StartMenuManager.Core.dll" />
+      </Component>
+      <Component Id="ConfigFile" Guid="04c9a847-e3e4-4b65-be22-51567f64c288">
+        <File Id="ConfigFile" Source="$(var.StartMenuManager.GUI.TargetDir)Start Menu Manager.exe.config" />
+      </Component>
+      <Component Id="HL.dll" Guid="aeab3399-1312-48ce-9fe9-7efd380407c6">
+        <File Id="HL.dll" Source="$(var.StartMenuManager.GUI.TargetDir)HL.dll" />
+      </Component>
+      <Component Id="TextEditLib.dll" Guid="c9396597-d545-472a-aab3-10b9751c078d">
+        <File Id="TextEditLib.dll" Source="$(var.StartMenuManager.GUI.TargetDir)TextEditLib.dll" />
+      </Component>
+      <Component Id="WebImageExtractor.dll" Guid="d320b18a-ebc0-4cbe-ba5e-dc8b8eaef6a9">
+        <File Id="WebImageExtractor.dll" Source="$(var.StartMenuManager.GUI.TargetDir)WebImageExtractor.dll" KeyPath="yes" Checksum="yes"/>
+      </Component>
+      <Component Id="Magick.NET_Q16_AnyCPU.dll" Guid="c98a1d7c-8b8d-40a2-9ada-460fca49b0ae">
+        <File Id="Magick.NET_Q16_AnyCPU.dll" Source="$(var.StartMenuManager.GUI.TargetDir)Magick.NET-Q16-AnyCPU.dll" KeyPath="yes" Checksum="yes"/>
+      </Component>
+      <Component Id="Magick.NET.Core.dll" Guid="dd42057e-8750-48fb-94f5-53df4d829331">
+        <File Id="Magick.NET.Core.dll" Source="$(var.StartMenuManager.GUI.TargetDir)Magick.NET.Core.dll" KeyPath="yes" Checksum="yes"/>
+      </Component>
+      <Component Id="HtmlAgilityPack.dll" Guid="828d7b08-d185-4263-88dd-a31d28f60f5d">
+        <File Id="HtmlAgilityPack.dll" Source="$(var.StartMenuManager.GUI.TargetDir)HtmlAgilityPack.dll" KeyPath="yes" Checksum="yes"/>
+      </Component>
+      <Component Id="FontAwesome.WPF.dll" Guid="3a88eaec-cf4e-4d7e-adc1-baf1bf348e9b">
+        <File Id="FontAwesome.WPF.dll" Source="$(var.StartMenuManager.GUI.TargetDir)FontAwesome.WPF.dll" KeyPath="yes" Checksum="yes"/>
+      </Component>
+    </ComponentGroup>
+
+    <!-- The Runner Folder -->
+    <ComponentGroup Id="RunnerComponents" Directory="RunnerFolder">
+      <Component Id="StartMenuManager.Runner.dll" Guid="2d71b00c-34e6-46ca-a7c1-2389b89cfb6e">
+        <File Source="$(var.StartMenuManager.Runner.TargetPath)" />
+      </Component>
+      <Component Id="Runner_JsonSubTypes.dll" Guid="ede7e505-1564-442f-ac8e-905c5007c483">
+        <File Id="Runner_JsonSubTypes.dll" Source="$(var.StartMenuManager.Runner.TargetDir)JsonSubTypes.dll" KeyPath="yes" Checksum="yes"/>
+      </Component>
+      <Component Id="Runner_Newtonsoft.Json.dll" Guid="be2385b9-2662-4949-a27e-769f8f4589a3">
+        <File Id="Runner_Newtonsoft.Json.dll" Source="$(var.StartMenuManager.Runner.TargetDir)Newtonsoft.Json.dll" KeyPath="yes" Checksum="yes"/>
+      </Component>
+      <Component Id="Runner_StartMenuManager.Core.dll" Guid="8e5cd35d-4649-42ce-9d10-76ed2b2b51b2">
+        <File Id="Runner_StartMenuManager.Core.dll" Source="$(var.StartMenuManager.Runner.TargetDir)StartMenuManager.Core.dll" />
+      </Component>
+      <Component Id="Runner_ConfigFile" Guid="2d35acc0-765f-46ac-a44a-68e975ba26ab">
+        <File Id="Runner_ConfigFile" Source="$(var.StartMenuManager.Runner.TargetDir)StartMenuManager.Runner.exe.config" />
+      </Component>
+    </ComponentGroup>
+
+    <!-- The Builder Folder -->
+    <ComponentGroup Id="BuilderComponents" Directory="BuilderFolder">
+      <Component Id="StartMenuManager.Builder.dll" Guid="b4fe5e1e-fc94-4636-9927-3141deb93a39">
+        <File Source="$(var.StartMenuManager.Builder.TargetPath)" />
+      </Component>
+      <Component Id="Builder_JsonSubTypes.dll" Guid="f66b47e1-cb8a-4124-b308-64ea9e639100">
+        <File Id="Builder_JsonSubTypes.dll" Source="$(var.StartMenuManager.Builder.TargetDir)JsonSubTypes.dll" KeyPath="yes" Checksum="yes"/>
+      </Component>
+      <Component Id="Builder_Newtonsoft.Json.dll" Guid="4f3ccfed-fe5d-4f8a-8f45-1cc8ec8720d8">
+        <File Id="Builder_Newtonsoft.Json.dll" Source="$(var.StartMenuManager.Builder.TargetDir)Newtonsoft.Json.dll" KeyPath="yes" Checksum="yes"/>
+      </Component>
+      <Component Id="Builder_StartMenuManager.Core.dll" Guid="b02ef2e2-8c2f-4b93-9629-b51cbe3dd5ec">
+        <File Id="Builder_StartMenuManager.Core.dll" Source="$(var.StartMenuManager.Builder.TargetDir)StartMenuManager.Core.dll" />
+      </Component>
+      <Component Id="Builder_ConfigFile" Guid="fde63fa2-e79a-4766-a19e-33c9240eda0a">
+        <File Id="Builder_ConfigFile" Source="$(var.StartMenuManager.Builder.TargetDir)StartMenuManager.Builder.exe.config" />
+      </Component>
+    </ComponentGroup>
+
+    <!-- The PreUninstall Folder -->
+    <ComponentGroup Id="PreUninstallComponents" Directory="PreUninstallFolder">
+      <Component Id="StartMenuManager.PreUninstall.dll" Guid="96a19dbc-a0f2-4e10-aa1f-c2bfcccdab76">
+        <File Source="$(var.StartMenuManager.PreUninstall.TargetPath)" />
+      </Component>
+      <Component Id="PreUninstall_JsonSubTypes.dll" Guid="a003bc08-ef26-42a1-8584-02498705fa11">
+        <File Id="PreUninstall_JsonSubTypes.dll" Source="$(var.StartMenuManager.PreUninstall.TargetDir)JsonSubTypes.dll" KeyPath="yes" Checksum="yes"/>
+      </Component>
+      <Component Id="PreUninstall_Newtonsoft.Json.dll" Guid="653ddee4-501e-4535-a947-259d13c82665">
+        <File Id="PreUninstall_Newtonsoft.Json.dll" Source="$(var.StartMenuManager.PreUninstall.TargetDir)Newtonsoft.Json.dll" KeyPath="yes" Checksum="yes"/>
+      </Component>
+      <Component Id="PreUninstall_StartMenuManager.Core.dll" Guid="df48474e-c19a-4f84-af2d-09f09f18e23d">
+        <File Id="PreUninstall_StartMenuManager.Core.dll" Source="$(var.StartMenuManager.PreUninstall.TargetDir)StartMenuManager.Core.dll" />
+      </Component>
+      <Component Id="PreUninstall_ConfigFile" Guid="cf2e4bce-2e67-49fc-8d38-dd7109200ab5">
+        <File Id="PreUninstall_ConfigFile" Source="$(var.StartMenuManager.PreUninstall.TargetDir)StartMenuManager.PreUninstall.exe.config" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

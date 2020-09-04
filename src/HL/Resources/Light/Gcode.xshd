@@ -1,0 +1,100 @@
+﻿<?xml version="1.0"?>
+<SyntaxDefinition
+	xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008"
+	name="Gcode"
+	extensions=".nc">
+
+  <Color name="NColour" foreground="#577be8" />
+  <Color name="GColour" foreground="#44ff33" />
+  <Color name="XColour" foreground="#57e89d" />
+  <Color name="YColour" foreground="#ed32cb" />
+  <Color name="ZColour" foreground="#e8aa57" />
+  <Color name="MColour" foreground="#f77171" />
+  <Color name="SColour" foreground="#d9e857" />
+  <Color name="IColour" foreground="#54ebd4" />
+  <Color name="JColour" foreground="#bf2675" />
+  <Color name="KColour" foreground="#d68c4f" />
+  <Color name="PercColour" foreground="#f1ff77" />
+  
+	<RuleSet>
+
+    <Span color="NColour" multiline="false">
+      <Begin color="NColour">N([0-9.-])</Begin>
+      <End color="NColour">(?![0-9.-])</End>
+    </Span>
+
+    <Rule color="NColour">N</Rule>
+
+    <Span color="GColour" multiline="false">
+      <Begin color="GColour">G([0-9.-])</Begin>
+      <End color="GColour">(?![0-9.-])</End>
+    </Span>
+
+    <Rule color="GColour">G</Rule>
+
+    <Span color="XColour" multiline="false">
+      <Begin color="XColour">X([0-9.-])</Begin>
+      <End color="XColour">(?![0-9.-])</End>
+    </Span>
+
+    <Rule color="XColour">X</Rule>
+
+    <Span color="YColour" multiline="false">
+      <Begin color="YColour">Y([0-9.-])</Begin>
+      <End color="YColour">(?![0-9.-])</End>
+    </Span>
+
+    <Rule color="YColour">Y</Rule>
+
+    <Span color="ZColour" multiline="false">
+      <Begin color="ZColour">Z([0-9.-])</Begin>
+      <End color="ZColour">(?![0-9.-])</End>
+    </Span>
+
+    <Rule color="ZColour">Z</Rule>
+
+    <Span color="MColour" multiline="false">
+      <Begin color="MColour">M([0-9.-])</Begin>
+      <End color="MColour">(?![0-9.-])</End>
+    </Span>
+
+    <Rule color="MColour">M</Rule>
+
+    <Span color="SColour" multiline="false">
+      <Begin color="SColour">S([0-9.-])</Begin>
+      <End color="SColour">(?![0-9.-])</End>
+    </Span>
+
+    <Rule color="SColour">S</Rule>
+
+    <Span color="IColour" multiline="false">
+      <Begin color="IColour">I([0-9.-])</Begin>
+      <End color="IColour">(?![0-9.-])</End>
+    </Span>
+
+    <Rule color="IColour">I</Rule>
+
+    <Span color="JColour" multiline="false">
+      <Begin color="JColour">J([0-9.-])</Begin>
+      <End color="JColour">(?![0-9.-])</End>
+    </Span>
+
+    <Rule color="JColour">J</Rule>
+
+    <Span color="KColour" multiline="false">
+      <Begin color="KColour">K([0-9.-])</Begin>
+      <End color="KColour">(?![0-9.-])</End>
+    </Span>
+
+    <Rule color="KColour">K</Rule>
+
+    <Span color="PercColour" multiline="false">
+      <Begin color="PercColour">%([0-9.-])</Begin>
+      <End color="PercColour">(?![0-9.-])</End>
+    </Span>
+
+    <Rule color="PercColour">%</Rule>
+		
+	</RuleSet>
+  
+</SyntaxDefinition>

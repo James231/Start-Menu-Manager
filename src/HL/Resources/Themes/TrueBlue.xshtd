@@ -1,0 +1,569 @@
+﻿<?xml version="1.0"?>
+<ThemeSyntaxDefinition name="TrueBlue" xmlns="http://icsharpcode.net/sharpdevelop/themesyntaxdefinition/2019">
+
+  <SyntaxDefinition name="ActionScript3" extensions=".as">
+    <Color name="Comment"    foreground="#FF00FF00" exampleText="// comment"/>
+    <Color name="String"     foreground="#FFFF9800" exampleText="'str'"/>
+    <Color name="MethodCall" foreground="#FFDFDF00" exampleText="o.ToString();"/>
+    <Color name="Digits"     foreground="#FF00BFFF" exampleText="3.1415"/>
+
+    <Color name="Keyword"  foreground="#FFFFFF00"/>
+    <Color name="Keyword1" foreground="#FFCFCF00"/>
+
+    <Color name="CommentMarkerSet"           foreground="#FFFF8080" fontWeight="bold"/>
+    <Color name="CommentMarkerSetHackUndone" foreground="#FFFF6060" fontWeight="bold"/>
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="ASP/XHTML" extensions=".asp;.aspx;.asax;.asmx;.ascx;.master" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+    <Color name="ASPSectionStartEndTags" foreground="Black" background="Yellow" exampleText="&lt;% System.Console.WriteLine(&quot;Hello World!&quot;); %&gt;" />
+    <Color name="ASPSection" foreground="Black" background="#FFF7F2E3" exampleText="&lt;% System.Console.WriteLine(&quot;Hello World!&quot;); %&gt;" />
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="Boo" extensions=".boo">
+    <Color name="Comment"          foreground="#FF00FF00"/>
+    <Color name="Comment1"         foreground="#FF009F00"/>
+    <Color name="Comment2"         foreground="#FF007F00"/>
+    <Color name="NestedComments"   foreground="#FF005F00"/>
+    <Color name="String"           foreground="#FFFF9800"/>
+    <Color name="CodeInsideString" foreground="#FFFF5840"/>
+    <Color name="Keywords"   foreground="#FFFFFF00"/>
+    <Color name="Keywords1"  foreground="#FFDFDF00"/>
+    <Color name="Keywords2"  foreground="#FFCFCF00"/>
+    <Color name="Keywords3"  foreground="#FFAFAF00"/>
+    <Color name="Keywords4"  foreground="#FF8F8F00"/>
+    <Color name="Keywords5"  foreground="#FF6F6F00"/>
+    <Color name="Keywords6"  foreground="#FFFFFF00"/>
+    <Color name="Keywords7"  foreground="#FFDFDF00"/>
+    <Color name="Keywords8"  foreground="#FFFFFF40"/>
+    <Color name="Keywords9"  foreground="#FFDFDF40"/>
+    <Color name="Keywords10" foreground="#FFCFCF40"/>
+    <Color name="Keywords11" foreground="#FFAFAF40"/>
+    <Color name="Keywords12" foreground="#FF8F8F40"/>
+    <Color name="Keywords13" foreground="#FF6F6F40"/>
+    <Color name="Keywords14" foreground="#FF4F4F40"/>
+    <Color name="Keywords15" foreground="#FF2F2F40"/>
+    <Color name="Keywords16" foreground="#FFFFFF8D"/>
+    <Color name="Keywords17" foreground="#FFFFFFAD"/>
+    <Color name="Keywords18" foreground="#FFFFFF6D"/>
+    <Color name="Keywords19" foreground="#FFFFFF00"/>
+    <Color name="Keywords20" foreground="#FFDFDF00"/>
+    <Color name="Regex"      foreground="#FFC0C0C0"/>
+    <Color name="CommentMarkerSet"           foreground="#FFFF0000" fontWeight="bold" />
+    <Color name="CommentMarkerSetHackUndone" foreground="#FF8B008B" fontWeight="bold" />
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="Coco" extensions=".atg">
+    <Color name="Comment"       foreground="#FF00FF00" fontStyle="italic" />
+    <Color name="Punctuation"   foreground="#FFA0A0F0" fontWeight="bold" />
+    <Color name="String"        foreground="#FFFF9800" />
+
+    <Color name="Keywords"      foreground="#FFFFFF00" />
+    <Color name="COMPILER"      foreground="#FFDFDF00" />
+
+    <Color name="Lt_Gt_Color"   foreground="#FFCFCF00" />
+    <Color name="Bracket_Color" foreground="#FFAFAF00" />
+    <Color name="CSharp_Color"  foreground="#FF8F8F00" />
+
+    <Color name="CSharp1_Color" foreground="#FF6F6F00" />
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="C++" extensions=".c;.h;.cc;.cpp;.hpp">
+    <Color name="Comment"           foreground="#FF00FF00" />
+    <Color name="Character"         foreground="#FFFF5840" />
+    <Color name="String"            foreground="#FFFF9800" />
+    <Color name="Preprocessor"      foreground="#FF8080FF" />
+    <Color name="Punctuation"       foreground="#FFA0A0F0" />
+    <Color name="MethodName"        foreground="#FFFFFF00" />
+    <Color name="Digits"            foreground="#FF00BFFF" />
+    <Color name="CompoundKeywords"  foreground="#FFDFDF00" />
+    <Color name="This"              foreground="#FFCFCF00" />
+    <Color name="Operators"         foreground="#FFAFAF00" />
+    <Color name="Namespace"         foreground="#FF8F8F00" />
+    <Color name="Friend"            foreground="#FF6F6F00" />
+    <Color name="Modifiers"         foreground="#FFFFFF00" />
+    <Color name="TypeKeywords"      foreground="#FFDFDF00" />
+    <Color name="BooleanConstants"  foreground="#FFFFFF40" />
+    <Color name="Keywords"          foreground="#FFDFDF40" />
+    <Color name="LoopKeywords"      foreground="#FFCFCF40" />
+    <Color name="JumpKeywords"      foreground="#FFAFAF40" />
+    <Color name="ExceptionHandling" foreground="#FF8F8F40" />
+    <Color name="ControlFlow"       foreground="#FF6F6F40" />
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="C#" extensions=".cs">
+    <!-- The named colors 'Comment' and 'String' are used in SharpDevelop to detect if a line is inside a multiline string/comment -->
+    <Color name="Comment"             foreground="#FF55FF00"/>
+    <Color name="String"              foreground="#FFFFFF00"/>
+    <Color name="StringInterpolation" foreground="White" exampleText="string text = $&quot;Hello, {name}!&quot;"/>
+    <Color name="Char"                foreground="#FFFFEF00"/>
+    <Color name="Preprocessor"        foreground="#FFFF8080"/>
+    <Color name="Punctuation"         foreground="#FFFFCF00"/>
+
+    <Color name="ValueTypeKeywords"     foreground="#FF00A0FF" exampleText="bool b = true;"/>
+
+    <Color name="ReferenceTypeKeywords" foreground="#FFFFA000" exampleText="object o;"/>
+    <Color name="MethodCall"            foreground="#FFFFA000"/>
+    <Color name="NumberLiteral"         foreground="#FFFFCF00"/>
+    <Color name="ThisOrBaseReference"   foreground="#FFFFA000"/>
+    <Color name="NullOrValueKeywords"   foreground="#FFFF8000"/>
+    <Color name="Keywords"              foreground="#FFFFE000"/>
+    <Color name="GotoKeywords"          foreground="#FFFFE000"/>
+    <Color name="ContextKeywords"       foreground="#FFFF8000"/>
+    <Color name="ExceptionKeywords"     foreground="#FFFF6000"/>
+    <Color name="CheckedKeyword"        foreground="#FFFF4000"/>
+    <Color name="UnsafeKeywords"        foreground="#FFFFC000"/>
+    <Color name="OperatorKeywords"      foreground="#FFFFE000"/>
+    <Color name="ParameterModifiers"    foreground="#FFFF8000"/>
+    <Color name="Modifiers"             foreground="#FFFF6000"/>
+    <Color name="Visibility"            foreground="#FFFF6000"/>
+    <Color name="NamespaceKeywords"     foreground="#FFFF4000"/>
+    <Color name="GetSetAddRemove"       foreground="#FFFFC000"/>
+    <Color name="TrueFalse"             foreground="#FFFF4000"/>
+    <Color name="TypeKeywords"          foreground="#FFFFC000"/>
+    <Color name="SemanticKeywords"      foreground="#FFFF5AB3" fontWeight="bold" exampleText="if (args == null) throw new ArgumentNullException(nameof(args));" />
+
+    <Color name="CommentMarkerSetTodo"       foreground="#FFFF0000" fontWeight="bold" />
+    <Color name="CommentMarkerSetHackUndone" foreground="#FF8B008B" fontWeight="bold" />
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="CSS" extensions=".css">
+    <Color name="Comment"     foreground="#FF00FF00" exampleText="/* comment */" />
+    <Color name="String"      foreground="#FFFF9800" exampleText="body { background: url(&quot;image.png&quot;) }" />
+    <Color name="Selector"    foreground="#FFFFFF00" fontWeight="normal" exampleText="div p" />
+    <Color name="Class"       foreground="#FFDFDF00" fontWeight="normal" exampleText="#para" />
+    <Color name="Property"    foreground="#FFCFCF00" fontWeight="normal" exampleText="p { color: red; }" />
+    <Color name="Value"       foreground="#FFAFAF00" fontWeight="normal" exampleText="p { color: red; }" />
+    <Color name="CurlyBraces" foreground="#FFFFFF00" exampleText="{ }" />
+    <Color name="Colon"       foreground="#FF6F6F00" exampleText=":" />
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="BAT" extensions=".bat;.dos">
+    <Color name="String"  foreground="#FFFF9800" exampleText="string text = &quot;Hello, World!&quot;" />
+    <Color name="String2" foreground="#FFFF5840" background="#22DDDDDD" exampleText="string text = &quot;Hello, World!&quot;"/>
+    <Color name="Comment"     foreground="#FF00FF00" exampleText="string text = &quot;Hello, World!&quot;"/>
+
+    <Color name="Digits"      foreground="#FF00BFFF" fontStyle="italic"/>
+    <Color name="Punctuation" foreground="#FFA0A0F0" exampleText="string text = &quot;Hello, World!&quot;"/>
+
+    <Color name="PARAMETER" foreground="#FFC0C0C0" exampleText="%1"/>
+    <Color name="VARIABLE"  foreground="#FFC0C0C0" exampleText="%MYVAR%"/>
+
+    <Color name="GOTO"        foreground="#FFFFFF00" background="#40AAAAAA"/>
+    <Color name="GOTO_TARGET" foreground="#FFDFDF00" background="#80AAAAAA"/>
+
+    <Color name="AtCommand"   foreground="#FFCFCF00" />
+
+    <Color name="Command"     foreground="#FFAFAF00" />
+    <Color name="Command1"    foreground="#FF8F8F00" />
+    <Color name="Command2"    foreground="#FF6F6F00" />
+    <Color name="Command3"    foreground="#FFFFFF00" />
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="F#" extensions=".fs">
+    <!-- Shades of Red-Brown: #a31515, #cf4315, #ffb96e, #ffdc95 -->
+    <Color name="Digits"      foreground="#FF00BFFF" exampleText="3.1415f"/>
+    <Color name="Comment"     foreground="#FF00FF00" exampleText="// comment"/>
+    <Color name="Punctuation" foreground="#FFA0A0F0" exampleText="a(b.c);"/>
+
+    <Color name="String"      foreground="#FFFF9800" exampleText="string text = &quot;Hello, World!&quot;"/>
+    <Color name="Char"        foreground="#FFFF5840" exampleText="char linefeed = '\n';"/>
+
+    <Color name="Preprocessor"         foreground="#FF8080FF" exampleText="#region Title"/>
+    <Color name="ReferenceTypes"       foreground="#FFFFFF00" exampleText="object o;"/>
+    <Color name="MethodCall"           foreground="#FFDFDF00" fontWeight="bold" exampleText="o.ToString();"/>
+    <Color name="NullOrValueKeywords"  foreground="#FFCFCF00" fontWeight="bold" exampleText="if (value == null)"/>
+    <Color name="Modifiers"            foreground="#FFAFAF00" exampleText="static readonly int a;"/>
+    <Color name="Visibility"           foreground="#FF8F8F00" fontWeight="bold" exampleText="public override void ToString();"/>
+    <Color name="NamespaceKeywords"    foreground="#FF6F6F00" fontWeight="bold" exampleText="namespace A.B { using System; }"/>
+    <Color name="GetSetAddRemove"      foreground="#FFFFFF00" exampleText="int Prop { get; set; }"/>
+    <Color name="ReservedKeywords"     foreground="#FFFFFF40" fontStyle="italic"/>
+    <Color name="CurrentKeywords"      foreground="#FFDFDF40" fontStyle="italic"/>
+
+    <Color name="CommentMarkerSetTodo"       foreground="#FFFF0000" fontWeight="bold"/>
+    <Color name="CommentMarkerSetHackUndone" foreground="#FF8B008B" fontWeight="bold"/>
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name = "HLSL" extensions = ".fx">
+    <Color name="Digits"      foreground="#FF00BFFF" fontStyle="italic"/>
+    <Color name="Comments"    foreground="#FF00FF00" />
+    <Color name="Punctuation" foreground="#FFA0A0F0" />
+    <Color name="Keywords"    foreground="#FFFFFF00" />
+    <Color name="DataTypes"   foreground="#FFE0E000" />
+    <Color name="States"      foreground="#FFCFCF00" fontStyle="italic"/>
+    <Color name="Constants"   foreground="#FFAFAF00" />
+    <Color name="Semantics"   foreground="#FF8F8F00" />
+    <Color name="Functions"   foreground="#FFDFDF00" />
+    <Color name="MethodCall"  foreground="#FFDFDF00" />
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="HTML" extensions=".htm;.html">
+    <Color name="Comment"          foreground="#FF00FF00" background="#22AAAAAA" fontStyle="italic" exampleText="&lt;!-- comment --&gt;"/>
+    <Color name="Digits"           foreground="#FF00BFFF" exampleText="&lt;digits&gt;0123456789&lt;/digits&gt;"/>
+    <Color name="ScriptTag"        foreground="#FFC0B180" exampleText="&lt;script&gt;alert('Hello World!');&lt;/script&gt;"/>
+    <Color name="JavaScriptTag"    foreground="#FFA09160" exampleText="&lt;script lang=&quot;JavaScript&quot;&gt;alert('Hello World!');&lt;/script&gt;"/>
+    <Color name="JScriptTag"       foreground="#FFC0B180" exampleText="&lt;script lang=&quot;JScript&quot;&gt;Response.Write(&quot;Hello World!&quot;);&lt;/script&gt;"/>
+    <Color name="VBScriptTag"      foreground="#FFA09160" exampleText="&lt;script lang=&quot;VBScript&quot;&gt;Response.Write(&quot;Hello World!&quot;)&lt;/script&gt;"/>
+    <Color name="UnknownScriptTag" foreground="#FFC0B180" exampleText="&lt;script la&gt;alert('Hello World!');&lt;/script&gt;"/>
+    <Color name="HtmlTag"          foreground="#FFFFFF00" exampleText="&lt;html&gt;Hello World!/html&gt;"/>
+    <Color name="Tags"             foreground="#FFDFDF00" exampleText="&lt;html&gt;Hello World! &lt;test /&gt;&lt;/html&gt;"/>
+    <Color name="Attributes"       foreground="#FFFFCF00" exampleText="&lt;html background='green'&gt;Hello World! &lt;test /&gt;&lt;/html&gt;"/>
+    <Color name="Slash"            foreground="#FFCFCF00" exampleText="&lt;html background='green'&gt;Hello World! &lt;test /&gt;&lt;/html&gt;"/>
+    <Color name="Assignment"       foreground="#FFFFFF40" exampleText="&lt;html background='green'&gt;Hello World! &lt;test /&gt;&lt;/html&gt;"/>
+    <Color name="String"           foreground="#FFFF9800" exampleText="&lt;html background='green'&gt;Hello World! &lt;test /&gt;&lt;/html&gt;"/>
+    <Color name="EntityReference"  foreground="#FFC0C0FF" fontStyle="italic" exampleText="&lt;html background='green'&gt;Hello&amp;nbsp;World! &lt;test /&gt;&lt;/html&gt;"/>
+    <Color name="Entities"         foreground="#FFA0A0F0" fontStyle="italic" exampleText="&lt;html foo='bar' background='green'&gt;Hello&amp;nbsp;World! &lt;test /&gt;&lt;/html&gt;"/>
+    <Color name="UnknownAttribute" foreground="#FFFF5800" />
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="INI" extensions=".cfg;.conf;.ini;.iss">
+    <Color name="Digits"       foreground="#FF00BFFF" fontStyle="italic"/>
+    <Color name="Comment"      foreground="#FF00FF00"/>
+    <Color name="Punctuation"  foreground="#FFA0A0F0"/>
+    <Color name="String"       foreground="#FFFF9800"/>
+    <Color name="String2"      foreground="#FFFF5840"/>
+
+    <Color name="Section"      foreground="#FFffcf00"/>
+
+    <Color name="PropertyName" foreground="#FFff9800"/>
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="Java" extensions=".java">
+    <Color name="MethodName"                  foreground="#FFDFDF00" />
+    <Color name="Digits"                      foreground="#FF00BFFF" fontStyle="italic"/>
+    <Color name="String"                      foreground="#FFFF9800" />
+    <Color name="Character"                   foreground="#FFFF5840" />
+    <Color name="Comment"                     foreground="#FF00FF00" />
+    <Color name="Punctuation"                 foreground="#FFA0A0F0" />
+    <Color name="AccessKeywords"              foreground="#FFCFCF00" fontWeight="bold" />
+    <Color name="OperatorKeywords"            foreground="#FFAFAF00" fontWeight="bold" />
+    <Color name="SelectionStatements"         foreground="#FFFFFF00" fontWeight="bold" />
+    <Color name="IterationStatements"         foreground="#FFAFAF00" fontWeight="bold" />
+    <Color name="ExceptionHandlingStatements" foreground="#FF8F8F00" fontWeight="bold" />
+    <Color name="ValueTypes"                  foreground="#FF6F6F00" fontWeight="bold" />
+    <Color name="ReferenceTypes"              foreground="#FFFFFF00" />
+    <Color name="Void"                        foreground="#FFcfcf40" />
+    <Color name="JumpStatements"              foreground="#FFafaf40" />
+    <Color name="Modifiers"                   foreground="#FFAFAF00" />
+    <Color name="AccessModifiers"             foreground="#FFFFFF8D" fontWeight="bold" />
+    <Color name="Package"                     foreground="#FF6F6F00" fontWeight="bold" />
+    <Color name="Literals"                    foreground="#FFff7860" fontWeight="bold" />
+    <Color name="CommentTags"                 foreground="Red" fontWeight="bold" fontStyle="italic" />
+    <Color name="JavaDocTags"                 foreground="#FFAAAAAA" fontWeight="bold" fontStyle="italic" />
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="JavaScript" extensions=".js">
+    <Color name="Digits"                    foreground="#FF00BFFF" fontStyle="normal" fontWeight="normal" exampleText="3.14"/>
+    <Color name="Comment"                   foreground="#FF00FF00" exampleText="// comment"/>
+    <Color name="String"                    foreground="#FFFF9800" exampleText="var text = &quot;Hello, World!&quot;;" />
+    <Color name="Character"                 foreground="#FFFF5840" exampleText="var char = 'a';"/>
+    <Color name="Regex"                     foreground="#FFFFFF00" exampleText="/abc/m"/>
+    <Color name="JavaScriptKeyWords"        foreground="#FFFFFF8D" exampleText="return myVariable;"/>
+    <Color name="JavaScriptIntrinsics"      foreground="#FFAFAF00" exampleText="Math.random()"/>
+    <Color name="JavaScriptLiterals"        foreground="#FFff7860" exampleText="return false;"/>
+    <Color name="JavaScriptGlobalFunctions" foreground="#FFCFCF00" exampleText="escape(myString);"/>
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="LOG" extensions=".log">
+    <Color name="Digits"       foreground="#FF00BFFF" fontStyle="normal" fontWeight="normal" />
+    <Color name="Comment"      foreground="#FF00FF00"/>
+    <Color name="Punctuation"  foreground="#FFA0A0F0"/>
+    <Color name="String"       foreground="#FFFF9800"/>
+    <Color name="String2"      foreground="#FFFF5840"/>
+
+    <Color name="Section"      foreground="#FFffcf00"/>
+
+    <Color name="AmericanDate" foreground="#FFFFFF00"/>
+    <Color name="TimeStamp"    foreground="#FFFFFF8D"/>
+
+    <Color name="ImportantKeywords" foreground="#FFFF0000" fontWeight="bold" />
+    <Color name="InfoKeywords"      foreground="#FF8B008B" fontWeight="bold" />
+  </SyntaxDefinition> 
+
+  <SyntaxDefinition name="MarkDown" extensions=".md">
+    <Color name="Heading"        foreground="#FFFFFF00"  exampleText="# Title #"/>
+    <Color name="Emphasis"       fontStyle="italic" exampleText="*this* is important!"/>
+    <Color name="StrongEmphasis" fontWeight="bold" exampleText="**this** is more important!"/>
+    <Color name="Code"           exampleText="this is `int.GetHashCode()`"/>
+    <Color name="BlockQuote"     foreground="#FF00FF00" exampleText="&gt; This is a\r\n&gt; quote." />
+    <Color name="Link"           foreground="#FF40BFFF" exampleText="[text](http://example.com)"/>
+    <Color name="Image"          foreground="#FF40BFFF" exampleText="[text][http://example.com/test.png]"/>
+    <Color name="LineBreak"      foreground="#FF222222" exampleText="end of line      \r\n2nd line   "/>
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name = "Pascal" extensions = ".pas">
+    <Color name="Digits"            foreground="#FF00BFFF" fontStyle="normal" exampleText="3.1415f"/>
+
+    <Color name="Punctuation"       foreground="#FFA0A0F0" exampleText="a(b.c);"/>
+
+    <Color name="Comment"           foreground="#FF00FF00" exampleText="// comment"/>
+    <Color name="Documenation"      foreground="#FF20FF20" />
+
+    <Color name="Char"              foreground="#FFFF5840" exampleText="char linefeed = '\n';"/>
+    <Color name="String"            foreground="#FFFF9800" exampleText="string text = &quot;Hello, World!&quot;"/>
+
+    <Color name="DataTypes"        foreground="#FFFFFF00" />
+    <Color name="Operators"        foreground="#FFFFFF8D" />
+    <Color name="Statements"       foreground="#FFAFAF00" />
+    <Color name="MethodCall"       foreground="#FFDFDF00" fontWeight="bold"/>
+    <Color name="FunctionKeywords" foreground="#FFCFCF00" />
+
+    <Color name="CommentMarkerSetTodo"       foreground="#FFFF0000" fontWeight="bold"/>
+    <Color name="CommentMarkerSetHackUndone" foreground="#FF8B008B" fontWeight="bold"/>
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="Patch" extensions=".patch;.diff">
+    <Color name="AddedText"     foreground="#FFFFFF00" exampleText="+added"/>
+    <Color name="RemovedText"   foreground="#FFFF6060" exampleText="-removed"/>
+    <Color name="UnchangedText"                        exampleText=" unchanged"/>
+    <Color name="Position"      foreground="#FF00C0FF" exampleText="@@ -186,6 +186,12 @@"/>
+    <Color name="Header"        foreground="#FF00FF00" exampleText="--- (oldversion)&#10;+++ (newversion)"/>
+    <Color name="FileName"      foreground="#FF00DF00" fontWeight="bold" exampleText="Index: path/to/file"/>
+    <Color name="AtAtColor"     foreground="#FFFF8080" exampleText="@@"/>
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name ="PHP" extensions = ".php">
+    <Color name="Comment"             foreground="#FF00FF00" exampleText="// comment"/>
+    <Color name="String"              foreground="#FFFF9800" exampleText="$text = &quot;Hello, World!&quot;"/>
+    <Color name="NumberLiteral"       foreground="#FF00BFFF" exampleText="3.1415"/>
+    <Color name="Punctuation"         foreground="#FFA0A0F0" exampleText="a(b + c)" />
+    <Color name="FunctionCall"        foreground="#FFDFDF00" fontWeight="bold" exampleText="abs(num);"/>
+    <Color name="AccessKeywords"      foreground="#FFFFFF8D" fontWeight="bold" exampleText="global $database;" />
+    <Color name="OperatorKeywords"    foreground="#FF4F4F40" fontWeight="bold" exampleText="if (x === false and y === false) { }" />
+    <Color name="SelectionStatements" foreground="#FFFFFF40" fontWeight="bold" exampleText="if (true) { } else { }" />
+    <Color name="IterationStatements" foreground="#FFDFDF40" fontWeight="bold" exampleText="while (true) { }" />
+    <Color name="JumpStatements"      foreground="#FFDFDF40" fontWeight="bold" exampleText="if (x == 5) continue;" />
+    <Color name="ControlStatements"   foreground="#FFCFCF40" fontWeight="bold" exampleText="include(&quot;test.php&quot;);" />
+    <Color name="ValueTypes"          foreground="#FFCFCF00" fontWeight="bold" exampleText="int test = 5;" />
+    <Color name="OtherTypes"          foreground="#FFAFAF40" exampleText="object test = null;" />
+    <Color name="AccessModifiers"     foreground="#FFAFAF00" fontWeight="bold" exampleText="public function test() {}" />
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name ="PLSQL" extensions = ".plsql">
+    <Color name="Comment"       foreground="#FF00FF00" exampleText="-- comment"/>
+    <Color name="String"        foreground="#FFFF9800" exampleText="&quot;Hello, World!&quot;"/>
+    <Color name="Keywords"      foreground="#FFFFFF00" fontWeight="bold"/>
+    <Color name="ReservedWords" foreground="#FFAFAF00" fontWeight="bold"/>
+    <Color name="Functions"     foreground="#FFDFDF00" fontWeight="bold"/>
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="PowerShell" extensions=".ps1;.psm1;.psd1">
+    <Color name="Comment"           foreground="#FF00FF00" exampleText="// comment" />
+    <Color name="String"            foreground="#FFFF9800" exampleText="string text = &quot;Hello, World!&quot;"/>
+    <Color name="Char"              foreground="#FFFF5840" exampleText="char linefeed = '\n';"/>
+    <Color name="Punctuation"       foreground="#FFA0A0F0" exampleText="a(b.c);" />
+    <Color name="NumberLiteral"     foreground="#FF00BFFF" exampleText="3.1415f"/>
+    <Color name="Keywords"          foreground="#FFFFFF00" fontWeight="bold" exampleText="if (a)"/>
+    <Color name="Variable"          foreground="#FFC0C0C0" exampleText="$param = 1"/>
+    <Color name="ExceptionKeywords" foreground="#FFAFAF40" fontWeight="bold"/>
+    <Color name="GotoKeywords"      foreground="#FFDFDF40" />
+    <Color name="ReferenceTypes"    foreground="#FFFFFF00" />
+    <Color name="Command"           foreground="#FFA09160" fontWeight="bold"/>
+    <Color name="Operators"         foreground="#FF4F4F40" exampleText="-eq"/>
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="Python" extensions=".py;.pyw">
+    <Color name="Comment"       foreground="#FF00FF00" />
+    <Color name="String"        foreground="#FFFF9800" />
+    <Color name="MethodCall"    foreground="#FFCFCF00" fontWeight="bold"/>
+    <Color name="NumberLiteral" foreground="#FF00BFFF" fontStyle="normal" fontWeight="normal"/>
+    <Color name="Keywords"      foreground="#FFFFFF00" />
+
+    <Color name="CommentMarkerSetTodo"        foreground="#FFFF0000" fontWeight="bold"/>
+    <Color name="CommentMarkerSetHackUndone"  foreground="#FF8B008B" fontWeight="bold"/>
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="Ruby" extensions=".rb">
+    <Color name="Digits"           foreground="#FF00BFFF" fontStyle="normal" fontWeight="normal"/>
+
+    <Color name="Variable"         foreground="#FFC0C0C0" />
+    <Color name="Punctuation"      foreground="#FFA0A0F0" />
+
+    <Color name="Comment"          foreground="#FF00FF00" />
+    <Color name="LineComment"      foreground="#FF00A000" />
+    <Color name="DocComment"       foreground="#FF00A000" />
+    <Color name="NestedComments"   foreground="#FF00C000" />
+    <Color name="MultiLineComment" foreground="#FF00FF00" />
+
+    <Color name="Char"   foreground="#FFFF5840" />
+    <Color name="String" foreground="#FFFF9800" />
+
+    <Color name="MethodCall"                  foreground="#FFDFDF00" fontWeight="bold" />
+    <Color name="FunctionDefinition"          foreground="#FFCFCF00" fontWeight="bold" />
+    <Color name="ExceptionHandlingStatements" foreground="#FFCFCF00" />
+
+    <Color name="Imports"                     foreground="#FF8FAF00" fontWeight="bold" />
+    <Color name="IterationStatements"         foreground="#FFAFAF00" />
+    <Color name="JumpStatements"              foreground="#FF8F8F00" />
+    <Color name="OperatorStatements"          foreground="#FF6F6F00" />
+    <Color name="NullStatement"               foreground="#FFFFFF00" />
+    <Color name="SelectionStatements"         foreground="#FFDFDF00" />
+    <Color name="BooleanStatements"           foreground="#FFE0D1A0" />
+    <Color name="DefinedStatement"            foreground="#FFC0B180" />
+    <Color name="ClassSelfStatement"          foreground="#FFA09160" />
+    <Color name="ClassInheritanceStatement"   foreground="#FF807140" />
+
+    <Color name="ImportStatement"             foreground="#FF8F8F00"/>
+    <Color name="BuiltInStatements"           foreground="#FFFFFF00" />
+    <Color name="ClassStatement"              foreground="#FFDFDF00" />
+
+    <Color name="CommentMarkerSetTodo"        foreground="#FFFF0000" fontWeight="bold"/>
+    <Color name="CommentMarkerSetHackUndone"  foreground="#FF8B008B" fontWeight="bold"/>
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="Scheme" extensions=".sls;.sps;.ss;.scm">
+    <!-- Lisp syntax definition -->
+    <Color name="Digits"              foreground="#FF00BFFF" exampleText="3.1415f"/>
+    <Color name="Comment"             foreground="#FF00FF00" />
+    <Color name="Punctuation"         foreground="#FFA0A0F0" exampleText="a(b.c);"/>
+
+    <Color name="Syntax"              foreground="#FFFFFF00"/>
+    <Color name="Library Syntax"      foreground="#FFAFAF40"/>
+    <Color name="Auxilliary Syntax"   foreground="#FFDFDF40"/>
+    <Color name="MethodCall"          foreground="#FFDFDF00" fontWeight="bold" />
+    <Color name="NullOrValueKeywords" foreground="#FFCFCF00" fontWeight="bold" exampleText="if (value == null)"/>
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="Squirrel" extensions=".nut">
+    <!-- Reference: http://www.squirrel-lang.org/
+         Reference Manual: http://www.squirrel-lang.org/doc/squirrel2.html -->
+    <Color name="Comment"      foreground="#FF00FF00" />
+    <Color name="Digits"       foreground="#FF00BFFF" fontStyle="normal" fontWeight="normal"/>
+    <Color name="Punctuation"  foreground="#FFA0A0F0" />
+    <Color name="String"       foreground="#FFFF9800" />
+    <Color name="MethodCall"   foreground="#FFDFDF00" fontStyle="normal" fontWeight="normal" />
+    <Color name="GGenObject"   foreground="#FFCFCF00" fontStyle="normal" fontWeight="normal" />
+    <Color name="Keywords"     foreground="#FFFFFF00" fontStyle="normal" fontWeight="normal"/>
+
+    <Color name="CommentMarkerSetTodo"        foreground="#FFFF0000" fontWeight="bold"/>
+    <Color name="CommentMarkerSetHackUndone"  foreground="#FF8B008B" fontWeight="bold"/>
+
+    <Color name="PreprocessorLine"            foreground="#FF8080FF" />
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name = "TeX" extensions = ".tex">
+    <Color name="Digits"        foreground="#FF00BFFF" fontStyle="normal" fontWeight="normal"/>
+    <Color name="LineComment"   foreground="#FF00FF00" />
+
+    <Color name="Keywords"      foreground="#FFFFFF00" />
+    <Color name="ShortKeywords" foreground="#FFDFDF00" background="#30AAAAAA" fontWeight="normal" />
+
+    <Color name="Todo" foreground="#FFFF0000" fontWeight="bold"/>
+    <Color name="HACK" foreground="#FF8B008B" fontWeight="bold"/>
+
+    <Color name="CurlyBrackets"             foreground="#FFE0D1A0" fontWeight="normal" />
+
+    <Color name="SquareBrackets"            foreground="#FFC0B180"                        />
+    <Color name="ParameterInSquareBrackets" foreground="#FFA09160" background="#11808080" />
+
+    <Color name="MathMode"  foreground="#FF00AFDF" />
+    <Color name="MathMode1" foreground="#FF00CFFF" background="#33AAAAAA" />
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="TSQL" extensions=".sql">
+    <Color name="Comment"     foreground="#FF00FF00" />
+    <Color name="Char"        foreground="#FFFF5840" />
+    <Color name="Keywords"    foreground="#FFFFFF00" exampleText="SELECT FROM"/>
+
+    <Color name="CommentMarkerSetTodo"        foreground="#FFFF0000" fontWeight="bold"/>
+    <Color name="CommentMarkerSetHackUndone"  foreground="#FFE0E000" fontWeight="bold"/>
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="TXT" extensions=".txt">
+    <Color name="Comment" foreground="#FF00FF00" />
+    <Color name="Digits"  foreground="#FF4B0082" fontStyle="normal" fontWeight="normal"/>
+    <Color name="String"  foreground="#FFFF9800" />
+    <Color name="String2" foreground="#FFFF5840" />
+
+    <Color name="BulletNumbers" foreground="#FF00AFDF" fontWeight="normal"/>
+
+    <Color name="Heading1" foreground="#FFFFFF00" />
+    <Color name="Heading2" foreground="#FFDFDF00" fontStyle="italic"   />
+    <Color name="Heading3" foreground="#FFCFCF00" fontWeight="normal" fontStyle="italic" />
+    <Color name="Heading4" foreground="#FFAFAF00" fontWeight="normal" />
+
+    <Color name="Important"    foreground="#FFF25D20" fontWeight="bold" />
+    <Color name="Punctuation"  foreground="#FFA0A0F0" />
+    <Color name="BoldFormat"   fontWeight="bold"   />
+    <Color name="ItalicFormat" fontStyle="italic" />
+
+    <Color name="Problem"  foreground="#FFFF0000" />
+    <Color name="Complete" foreground="#FF00FF00" />
+
+    <!-- Highlight Time information at begining of line: eg.: "2:04:45 PM" or "12:04:45 AM" -->
+    <Color name="HighlightTime" fontStyle="italic" foreground="#FFFFFF00" />
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="VB" extensions=".vb">
+    <Color name="Comment"          foreground="#FF00FF00" exampleText="' comment" />
+    <Color name="String"           foreground="#FFFF9800" exampleText="text = &quot;Hello, World!&quot;"/>
+
+    <Color name="DateLiteral"      foreground="#FFff7860" exampleText="endOfWorld = #2012-12-21#"/>
+    <Color name="Preprocessor"     foreground="#FF8080FF" exampleText="#Region &quot;Title&quot;"/>
+    <Color name="DataTypes"        foreground="#FFFFFF00" exampleText="Dim b As Boolean = True"/>
+    <Color name="Operators"        foreground="#FFDFDF00" exampleText="If a OrElse b Then"/>
+    <Color name="Constants"        foreground="#FFCFCF00" exampleText="b = False"/>
+    <Color name="Keywords"         foreground="#FFAFAF00" exampleText="If a OrElse b Then"/>
+    <Color name="FunctionKeywords" foreground="#FF8F8F00" exampleText="CInt(a)"/>
+    <Color name="ContextKeywords"  foreground="#FF6F6F00" exampleText="Declare Unicode Sub SomeMethod"/>
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="VTL" extensions=".vtl;.vm">
+    <Color name="Digits"          foreground="#FF00BFFF" fontStyle="normal" fontWeight="normal"/>
+    <Color name="String"          foreground="#FFFF9800" exampleText="string text = &quot;Hello, World!&quot;" />
+    <Color name="String2"         foreground="#FFFF5840" />
+
+    <Color name="Comment"         foreground="#FF00FF00" />
+    <Color name="Keywords"        foreground="#FFFFFF00" />
+
+    <Color name="Punctuation"     foreground="#FFA0A0F0" />
+
+    <Color name="ObjectReference" foreground="#FFDFDF00" exampleText="$Customer.Name"/>
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="XML" extensions=".xml;.xsl;.xslt;.xsd;.manifest;.config;.addin;.xshd;.wxs;.wxi;.wxl;.proj;.csproj;.vbproj;.ilproj;.booproj;.build;.xfrm;.targets;.xaml;.xpt;.xft;.map;.wsdl;.disco;.ps1xml;.nuspec">
+    <Color name="Comment"        foreground="#FF00ff00" exampleText="&lt;!-- comment --&gt;"/>
+    <Color name="CData"          foreground="#FFc0b180" exampleText="&lt;![CDATA[data]]&gt;"/>
+    <Color name="DocType"        foreground="#FFdfdf00" exampleText="&lt;!DOCTYPE rootElement&gt;"/>
+    <Color name="XmlDeclaration" foreground="#FFdfdf20" exampleText='&lt;?xml version="1.0"?&gt;'/>
+    <Color name="XmlTag"         foreground="#FFffff00" exampleText='&lt;tag attribute="value" /&gt;'/>
+    <Color name="AttributeName"  foreground="#FFffcf00" exampleText='&lt;tag attribute="value" /&gt;'/>
+    <Color name="AttributeValue" foreground="#FFff9800" exampleText='&lt;tag attribute="value" /&gt;'/>
+    <Color name="Entity"         foreground="#FFa0a0f0" exampleText="index.aspx?a=1&amp;amp;b=2"/>
+    <Color name="BrokenEntity"   foreground="#FFff5800" exampleText="index.aspx?a=1&amp;b=2"/>
+  </SyntaxDefinition>
+
+  <SyntaxDefinition name="XmlDoc">
+    <Color name="XmlString"      foreground="#FF666666" fontWeight="normal" exampleText="${DocCommentMarker} &lt;exception cref=&quot;System.Exception&quot; /&gt;"/>
+    <Color name="DocComment"     foreground="#FFAAAAAA" exampleText="${DocCommentMarker} &lt;exception cref=&quot;System.Exception&quot; /&gt;"/>
+    <Color name="XmlPunctuation" foreground="#FF999999" fontWeight="normal" exampleText="${DocCommentMarker} &lt;exception cref=&quot;System.Exception&quot; /&gt;"/>
+    <Color name="KnownDocTags"   foreground="#FF7979B9" fontWeight="normal" exampleText="${DocCommentMarker} &lt;exception cref=&quot;System.Exception&quot; /&gt;"/>
+  </SyntaxDefinition>
+
+  <GlobalStyles>
+    <!-- Background and foreground color of the default text (without highlighting) in the text editor -->
+    <DefaultStyle foreground="#FFFFFFFF" background="#FF000080" />
+
+    <!-- Background color of the currently highlighted line -->
+    <CurrentLineBackground background="#7F4A11AE" bordercolor="#7F4A11AE"/>
+
+    <!-- Foreground color of the line number display in the editor -->
+    <LineNumbersForeground foreground="#FFC0C0FF"/>
+
+    <!-- background, border, and Foreground color of a text selection (eg.: CTRL+A or "Select All") -->
+    <Selection background="#3FFFFFFF" bordercolor="#9FFFFFFF" foreground="Yellow" />
+
+    <!-- Foreground and background color of a hyperlink in the text -->
+    <Hyperlink background="#08FFFFFF" foreground="#FF00BFFF"/>
+
+    <!-- Foreground color of a non-printable character (enter, tab, or space)
+         in the text if their display is explicitely enabled -->
+    <NonPrintableCharacter foreground="#5FFF8080"/>
+  </GlobalStyles>
+</ThemeSyntaxDefinition>
+<!--
+- XSD Generation from XML
+  http://xmlgrid.net/xml2xsd.html
+
+- XML XSD Validation
+  http://www.utilities-online.info/xsdvalidation/
+-->

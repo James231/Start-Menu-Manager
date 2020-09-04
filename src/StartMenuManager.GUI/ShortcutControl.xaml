@@ -1,0 +1,138 @@
+﻿<UserControl x:Class="StartMenuManager.GUI.ShortcutControl"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StartMenuManager.GUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <materialDesign:Card Margin="16 7 16 7">
+            <Expander Padding="0" Margin="-20 -8 0 -6" IsExpanded="False" ExpandDirection="Down" FlowDirection="RightToLeft" Background="{DynamicResource MaterialDesignCardBackground}">
+                <Expander.Header>
+                    <DockPanel FlowDirection="LeftToRight" Margin="-25 0 -10 -2">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon x:Name="Icon" VerticalAlignment="Center" Kind="Web" Width="25" Height="25"/>
+                            <TextBlock Name="ShortcutTitleName" VerticalAlignment="Center" Margin="10 0 10 0" Style="{DynamicResource MaterialDesignBody1TextBlock}">My Shortcut</TextBlock>
+                        </StackPanel>
+                        <ComboBox Name="MenuComboBox" SelectionChanged="MenuComboBoxSelectionChanged" Width="40" Margin="0 0 -10 0" DockPanel.Dock="Right" Style="{DynamicResource MaterialDesignDataGridComboBox}" ToolTip="Select the type of shortcut you wish to create." VerticalAlignment="Center">
+                            <ComboBoxItem>
+                                <DockPanel>
+                                    <materialDesign:PackIcon DockPanel.Dock="Left" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Kind="Play" Width="25" Height="25"/>
+                                    <TextBlock Margin="10 0 10 0" VerticalAlignment="Center" Style="{DynamicResource MaterialDesignBody1TextBlock}">Test Shortcut</TextBlock>
+                                </DockPanel>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <DockPanel>
+                                    <materialDesign:PackIcon DockPanel.Dock="Left" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Kind="ContentCopy" Width="25" Height="25"/>
+                                    <TextBlock Margin="10 0 10 0" VerticalAlignment="Center" Style="{DynamicResource MaterialDesignBody1TextBlock}">Duplicate Shortcut</TextBlock>
+                                </DockPanel>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <DockPanel>
+                                    <materialDesign:PackIcon DockPanel.Dock="Left" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Kind="ChevronUp" Width="25" Height="25"/>
+                                    <TextBlock Margin="10 0 10 0" VerticalAlignment="Center" Style="{DynamicResource MaterialDesignBody1TextBlock}">Move Up</TextBlock>
+                                </DockPanel>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <DockPanel>
+                                    <materialDesign:PackIcon DockPanel.Dock="Left" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Kind="ChevronDown" Width="25" Height="25"/>
+                                    <TextBlock Margin="10 0 10 0" VerticalAlignment="Center" Style="{DynamicResource MaterialDesignBody1TextBlock}">Move Down</TextBlock>
+                                </DockPanel>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <DockPanel>
+                                    <materialDesign:PackIcon DockPanel.Dock="Left" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Kind="Delete" Width="25" Height="25"/>
+                                    <TextBlock Margin="10 0 10 0" VerticalAlignment="Center" Style="{DynamicResource MaterialDesignBody1TextBlock}">Delete Shortcut</TextBlock>
+                                </DockPanel>
+                            </ComboBoxItem>
+                        </ComboBox>
+                        <materialDesign:PackIcon DockPanel.Dock="Right" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Kind="DotsVertical" Margin="5 0 -20 0" Width="25" Height="25"/>
+                        <Button ToolTip="Delete this Shortcut" Click="DeleteShortcutButtonClick" Margin="0 -4 0 -4" Padding="0" DockPanel.Dock="Right" HorizontalAlignment="Right" Width="50" Style="{DynamicResource MaterialDesignFlatButton}">
+                            <materialDesign:PackIcon Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Kind="Delete" Width="25" Height="25"/>
+                        </Button>
+                    </DockPanel>
+                </Expander.Header>
+                <Grid FlowDirection="LeftToRight">
+                    <Grid Margin="34 12 14 20">
+                        <StackPanel>
+                            <DockPanel Margin="0 0 0 5">
+                                <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" FontWeight="Medium">Shortcut Type:</TextBlock>
+                                <ComboBox ToolTip="Select the type of shortcut you wish to create." Name="ShortcutTypeComboBox" SelectionChanged="ShortcutTypeChanged" VerticalAlignment="Center" Margin="15 0 0 0">
+                                    <ComboBoxItem ToolTip="Opens your web browser to a URL.">Web</ComboBoxItem>
+                                    <ComboBoxItem ToolTip="Opens a file in the default software.">File</ComboBoxItem>
+                                    <ComboBoxItem ToolTip="Opens a folder in Windows File Explorer.">Folder</ComboBoxItem>
+                                    <ComboBoxItem ToolTip="Opens software. E.g. an .exe file.">Software</ComboBoxItem>
+                                    <ComboBoxItem ToolTip="Runs a command through Command Prompt.">Command</ComboBoxItem>
+                                    <ComboBoxItem ToolTip="Performs multiple actions of different types.">Multi-Action</ComboBoxItem>
+                                </ComboBox>
+                            </DockPanel>
+                            <DockPanel Margin="0 5 0 5">
+                                <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" FontWeight="Medium">Shortcut Name:</TextBlock>
+                                <TextBox ToolTip="Type the name of the shortcut. This will appear in Windows Search." x:Name="ShortcutNameField" TextChanged="ShortcutNameChanged" Margin="15 0 0 0"/>
+                            </DockPanel>
+                            <StackPanel Name="WebsiteUi" Visibility="Collapsed">
+                                <DockPanel Margin="0 5 0 5">
+                                    <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" FontWeight="Medium">Website Url:</TextBlock>
+                                    <TextBox ToolTip="The Url of the website this shortcut will open." x:Name="WebsiteUriField" TextChanged="WebsiteUriTextChanged" Margin="15 0 0 0"/>
+                                </DockPanel>
+                            </StackPanel>
+                            <StackPanel Name="FileUi" Visibility="Collapsed">
+                                <DockPanel Margin="0 5 0 5">
+                                    <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" FontWeight="Medium">File Path:</TextBlock>
+                                    <Button DockPanel.Dock="Right" Click="FileUi_PathSelectPressed" Style="{DynamicResource MaterialDesignFlatDarkBgButton}" Margin="8 0 0 0" Width="73" Height="26">Select</Button>
+                                    <TextBox ToolTip="Enter path of the file this shortcut should open." x:Name="FileUi_Path" TextChanged="FileUi_PathChanged" Margin="15 0 0 0"/>
+                                </DockPanel>
+                            </StackPanel>
+                            <StackPanel Name="FolderUi" Visibility="Collapsed">
+                                <DockPanel Margin="0 5 0 5">
+                                    <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" FontWeight="Medium">Folder Path:</TextBlock>
+                                    <Button DockPanel.Dock="Right" Click="FolderUi_PathSelectPressed" Style="{DynamicResource MaterialDesignFlatDarkBgButton}" Margin="8 0 0 0" Width="73" Height="26">Select</Button>
+                                    <TextBox ToolTip="Enter path of the folder this shortcut should open." x:Name="FolderUi_Path" TextChanged="FolderUi_PathChanged" Margin="15 0 0 0"/>
+                                </DockPanel>
+                            </StackPanel>
+                            <StackPanel Name="SoftwareUi" Visibility="Collapsed">
+                                <DockPanel Margin="0 5 0 5">
+                                    <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" FontWeight="Medium">Software Path (e.g. .exe file):</TextBlock>
+                                    <Button DockPanel.Dock="Right" Click="SoftwareUi_PathSelectPressed" Style="{DynamicResource MaterialDesignFlatDarkBgButton}" Margin="8 0 0 0" Width="73" Height="26">Select</Button>
+                                    <TextBox ToolTip="Enter path of the software this shortcut should open." x:Name="SoftwareUi_Path" TextChanged="SoftwareUi_PathChanged" Margin="15 0 0 0"/>
+                                </DockPanel>
+                            </StackPanel>
+                            <StackPanel Name="CommandUi" Visibility="Collapsed">
+                                <DockPanel Margin="0 5 0 5">
+                                    <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" FontWeight="Medium">Command:</TextBlock>
+                                    <TextBox ToolTip="Enter the command which should be run in a terminal." x:Name="CommandUi_Comand" TextChanged="CommandUi_CommandTextChanged" Margin="15 0 0 0"/>
+                                </DockPanel>
+                                <DockPanel Margin="0 5 0 5">
+                                    <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" FontWeight="Medium">Keep Terminal Open?</TextBlock>
+                                    <CheckBox ToolTip="Should the terminal remain open after command completed?" x:Name="CommandUi_KeepOpen" Checked="CommandUi_KeepOpen_Checked" Unchecked="CommandUi_KeepOpen_Unchecked" Margin="15 0 0 0" Foreground="White"></CheckBox>
+                                </DockPanel>
+                            </StackPanel>
+                            <DockPanel Margin="0 5 0 5">
+                                <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" FontWeight="Medium">Icon:</TextBlock>
+                                <TextBlock x:Name="ShotcutNameText" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="15 0 0 0">None Selected.</TextBlock>
+                                <Button DockPanel.Dock="Right" Width="45" Padding="-10 0 -10 0" Margin="5 0 5 0" HorizontalAlignment="Right" Click="ClearSelectedIcon">Clear</Button>
+                                <Button DockPanel.Dock="Right" Width="160" Margin="5 0 5 0" HorizontalAlignment="Right" Click="SelectIconFromWebsite">Select from Website</Button>
+                                <Button DockPanel.Dock="Right" Width="125" Margin="5 0 5 0" HorizontalAlignment="Right" Click="SelectIconFromFile">Select .ico File</Button>
+                            </DockPanel>
+                            <StackPanel Name="MultiUi" Visibility="Collapsed" Margin="0 10 0 0">
+
+                                <StackPanel x:Name="MultiUi_ShortcutsParent"></StackPanel>
+
+                                <materialDesign:Card Margin="16 7 16 0" Width="165" HorizontalAlignment="Left">
+                                    <Button x:Name="MultiUi_AddButton" Style="{DynamicResource MaterialDesignFlatButton}" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Click="MultiUi_AddShorcutButtonPressed">
+                                        <DockPanel>
+                                            <materialDesign:PackIcon DockPanel.Dock="Left" Margin="-10 0 5 0" Kind="Add" Width="25" Height="25"/>
+                                            <TextBlock VerticalAlignment="Center" Style="{DynamicResource MaterialDesignBody1TextBlock}">Add Action</TextBlock>
+                                        </DockPanel>
+                                    </Button>
+                                </materialDesign:Card>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Expander>
+        </materialDesign:Card>
+    </Grid>
+</UserControl>

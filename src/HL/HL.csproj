@@ -1,0 +1,135 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFrameworks>net4;netcoreapp3.0</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <Version>1.0.4</Version>
+    <AssemblyVersion>1.0.4</AssemblyVersion>
+    <FileVersion>1.0.4</FileVersion>
+    <Company>Open Source</Company>
+    <Product>Dirkster.HL</Product>
+    <Copyright>2019-2020</Copyright>
+    <Description>This assembly implements a docking layout system for WPF.</Description>
+
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/Dirkster99/HL</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Dirkster99/HL</RepositoryUrl>
+    <PackageId>Dirkster.HL</PackageId>
+    <Authors>https://github.com/Dirkster99/HL</Authors>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageTags>avalonedit dark-theme light-theme theming highlighting</PackageTags>
+    <PackageReleaseNotes>Mutlitargetting NetCore3 and Net 4.0</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="images/icon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Modes\ModeV1.xsd" />
+    <None Remove="Modes\ModeV2.xsd" />
+    <None Remove="Modes\ModeV2_htd.xsd" />
+    <None Remove="Resources\Light\AS3.xshd" />
+    <None Remove="Resources\Light\ASPX.xshd" />
+    <None Remove="Resources\Light\Boo.xshd" />
+    <None Remove="Resources\Light\Coco-Mode.xshd" />
+    <None Remove="Resources\Light\CPP-Mode.xshd" />
+    <None Remove="Resources\Light\CSharp-Mode.xshd" />
+    <None Remove="Resources\Light\CSS-Mode.xshd" />
+    <None Remove="Resources\Light\DOSBATCH.xshd" />
+    <None Remove="Resources\Light\FSharp-Mode.xshd" />
+    <None Remove="Resources\Light\Gcode.xshd" />
+    <None Remove="Resources\Light\GRazor-Mode.xshd" />
+    <None Remove="Resources\Light\HLSL.xshd" />
+    <None Remove="Resources\Light\HTML-Mode.xshd" />
+    <None Remove="Resources\Light\INI.xshd" />
+    <None Remove="Resources\Light\Java-Mode.xshd" />
+    <None Remove="Resources\Light\JavaScript-Mode.xshd" />
+    <None Remove="Resources\Light\Log.xshd" />
+    <None Remove="Resources\Light\MarkDown-Mode.xshd" />
+    <None Remove="Resources\Light\Pascal.xshd" />
+    <None Remove="Resources\Light\Patch-Mode.xshd" />
+    <None Remove="Resources\Light\PHP-Mode.xshd" />
+    <None Remove="Resources\Light\PLSQL.xshd" />
+    <None Remove="Resources\Light\PowerShell.xshd" />
+    <None Remove="Resources\Light\Python-Mode.xshd" />
+    <None Remove="Resources\Light\Ruby.xshd" />
+    <None Remove="Resources\Light\scheme.xshd" />
+    <None Remove="Resources\Light\squirrel.xshd" />
+    <None Remove="Resources\Light\Tex-Mode.xshd" />
+    <None Remove="Resources\Light\TSQL-Mode.xshd" />
+    <None Remove="Resources\Light\TXT.xshd" />
+    <None Remove="Resources\Light\VB-Mode.xshd" />
+    <None Remove="Resources\Light\vtl.xshd" />
+    <None Remove="Resources\Light\XML-Mode.xshd" />
+    <None Remove="Resources\Light\XmlDoc.xshd" />
+    <None Remove="Resources\Themes\Dark.xshtd" />
+    <None Remove="Resources\Themes\TrueBlue.xshtd" />
+    <None Remove="Resources\Themes\VS2019_Dark.xshtd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Modes\ModeV1.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modes\ModeV2.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modes\ModeV2_htd.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Light\AS3.xshd" />
+    <EmbeddedResource Include="Resources\Light\ASPX.xshd" />
+    <EmbeddedResource Include="Resources\Light\Boo.xshd" />
+    <EmbeddedResource Include="Resources\Light\Coco-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\CPP-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\CSharp-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\CSS-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\DOSBATCH.xshd" />
+    <EmbeddedResource Include="Resources\Light\FSharp-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\Gcode.xshd" />
+    <EmbeddedResource Include="Resources\Light\GRazor-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\HLSL.xshd" />
+    <EmbeddedResource Include="Resources\Light\HTML-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\INI.xshd" />
+    <EmbeddedResource Include="Resources\Light\Java-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\JavaScript-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\Log.xshd" />
+    <EmbeddedResource Include="Resources\Light\MarkDown-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\Pascal.xshd" />
+    <EmbeddedResource Include="Resources\Light\Patch-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\PHP-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\PLSQL.xshd" />
+    <EmbeddedResource Include="Resources\Light\PowerShell.xshd" />
+    <EmbeddedResource Include="Resources\Light\Python-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\Ruby.xshd" />
+    <EmbeddedResource Include="Resources\Light\scheme.xshd" />
+    <EmbeddedResource Include="Resources\Light\squirrel.xshd" />
+    <EmbeddedResource Include="Resources\Light\Tex-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\TSQL-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\TXT.xshd" />
+    <EmbeddedResource Include="Resources\Light\VB-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\vtl.xshd" />
+    <EmbeddedResource Include="Resources\Light\XML-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Light\XmlDoc.xshd" />
+    <EmbeddedResource Include="Resources\Themes\Dark.xshtd" />
+    <EmbeddedResource Include="Resources\Themes\TrueBlue.xshtd" />
+    <EmbeddedResource Include="Resources\Themes\VS2019_Dark.xshtd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AvalonEdit" Version="6.0.1" />
+  </ItemGroup>
+
+  <!-- NuGet Packaging -->
+  <ItemGroup>
+    <None Include="LICENSE" Pack="true" PackagePath="" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="LICENSE">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
