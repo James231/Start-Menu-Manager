@@ -29,7 +29,7 @@ Once created, those shorcuts can be moved or added elsewhere. They can be pinned
   
 ### Fixes Windows 10 Bugs
 
-Windows 10 Search is buggy and inconsistent. Sometimes you might in type in the exact name of an app, but get redirected to Bing search results inside a web brower.  
+Windows 10 Search is buggy and inconsistent. Sometimes you might type in the exact name of an app, but get redirected to Bing search results inside a web brower.  
   
 Start Menu Manager fixes this. All shorctuts are treated like apps so they get priority in Windows 10 Search and appear at the top of the search results.  
 
